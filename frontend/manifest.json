@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "My Chat Extension",
+  "version": "1.0",
+  "description": "A chat extension with LLM integration",
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "dist/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["dist/content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "src/popup.html"
+  }
+}
